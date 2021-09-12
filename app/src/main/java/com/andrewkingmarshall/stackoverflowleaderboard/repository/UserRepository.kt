@@ -6,6 +6,7 @@ import com.andrewkingmarshall.stackoverflowleaderboard.database.entities.User
 import com.andrewkingmarshall.stackoverflowleaderboard.network.service.StackExchangeApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import timber.log.Timber

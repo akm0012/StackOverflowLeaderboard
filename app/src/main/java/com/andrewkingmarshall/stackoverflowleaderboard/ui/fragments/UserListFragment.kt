@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -38,10 +39,26 @@ class UserListFragment : BaseFragment<FragmentUserListBinding>(FragmentUserListB
 
     private fun setUpUserList() {
 
+        // Set up pull to refresh
+        binding.swipeRefreshLayout.apply {
+            setColorSchemeColors(
+                ContextCompat.getColor(requireContext(), R.color.purple_700),
+                ContextCompat.getColor(requireContext(), R.color.teal_200)
+            )
+            setOnRefreshListener { viewModel.onPullToRefresh() }
+        }
+
+        // Set up adapter
         binding.recyclerView.adapter = userListAdapter.apply {
             setOnUserClickedListener { it.displayName.toast(requireContext()) }
         }
 
+        // Listen to refresh the user data
         viewModel.users.observe(viewLifecycleOwner, { userListAdapter.submitList(it) })
+
+        // Listen for when we should stop showing the pull to refresh indicator
+        viewModel.showLoadingEvent.observe(
+            viewLifecycleOwner,
+            { binding.swipeRefreshLayout.isRefreshing = it })
     }
 }

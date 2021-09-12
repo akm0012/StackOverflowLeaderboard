@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.andrewkingmarshall.stackoverflowleaderboard.database.entities.User
 import com.andrewkingmarshall.stackoverflowleaderboard.databinding.CompoundViewUserItemBinding
+import com.bumptech.glide.Glide
 
 class UserListItemView : ConstraintLayout {
 
@@ -19,6 +20,11 @@ class UserListItemView : ConstraintLayout {
     private fun resetView() {
         binding.apply {
             nameTextView.text = ""
+            totalReputationTextView.text = ""
+            goldMedalCount.text = ""
+            silverMedalCount.text = ""
+            bronzeMedalCount.text = ""
+            profileImageView.setImageDrawable(null)
         }
     }
 
@@ -29,7 +35,14 @@ class UserListItemView : ConstraintLayout {
 
         binding.apply {
             nameTextView.text = viewModel.getName()
-        }
+            totalReputationTextView.text = viewModel.getTotalReputation()
+            goldMedalCount.text = viewModel.getGoldMedalCount()
+            silverMedalCount.text = viewModel.getSilverMedalCount()
+            bronzeMedalCount.text = viewModel.getBronzeMedalCount()
 
+            Glide.with(context)
+                .load(viewModel.getProfilePicUrl())
+                .into(profileImageView)
+        }
     }
 }

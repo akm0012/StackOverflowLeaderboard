@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.andrewkingmarshall.stackoverflowleaderboard.ui.views.UserListItemView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/userItem"
+    android:background="@drawable/transparent_gray_ripple_square"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
