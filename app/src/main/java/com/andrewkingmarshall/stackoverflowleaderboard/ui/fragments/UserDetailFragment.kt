@@ -38,7 +38,7 @@ class UserDetailFragment :
 
         binding.apply {
             userNameTextView.text = userDomainModel.userName
-            userType.text = userDomainModel.userType
+            userTypeAndLocation.text = userDomainModel.userTypeAndLocation
             totalReputationTextView.text = userDomainModel.totalReputationDisplayString
             goldMedalCount.text = userDomainModel.goldMedalCount
             silverMedalCount.text = userDomainModel.silverMedalCount

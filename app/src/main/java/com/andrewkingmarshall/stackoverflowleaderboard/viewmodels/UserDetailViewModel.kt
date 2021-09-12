@@ -34,7 +34,11 @@ class UserDetailViewModel @Inject constructor(
                     it.silverBadgeCount.toString(),
                     it.bronzeBadgeCount.toString(),
                     context.getString(R.string.member_since, memberSince),
-                    context.getString(it.userType.readableResourceId)
+                    context.getString(
+                        R.string.member_type_and_location,
+                        it.userLocation,
+                        context.getString(it.userType.readableResourceId)
+                    )
                 )
             }
             .asLiveData()
@@ -48,7 +52,7 @@ class UserDetailViewModel @Inject constructor(
         val silverMedalCount: String,
         val bronzeMedalCount: String,
         val memberSince: String,
-        val userType: String,
+        val userTypeAndLocation: String,
     )
 
 }

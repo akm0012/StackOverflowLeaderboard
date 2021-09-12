@@ -25,14 +25,14 @@
         android:layout_marginTop="@dimen/detail_item_top_margin"
         android:textColor="@color/black"
         android:textSize="@dimen/text_large"
-        app:layout_constraintBottom_toTopOf="@id/userType"
+        app:layout_constraintBottom_toTopOf="@id/userTypeAndLocation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userProfileImageView"
         tools:text="@tools:sample/full_names" />
 
     <TextView
-        android:id="@+id/userType"
+        android:id="@+id/userTypeAndLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/dark_gray"
@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userNameTextView"
-        tools:text="Registered" />
+        tools:text="Atlanta, GA (Registered)" />
 
     <TextView
         android:id="@+id/totalReputationTextView"
@@ -53,7 +53,7 @@
         app:layout_constraintBottom_toTopOf="@id/goldMedalCount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userType"
+        app:layout_constraintTop_toBottomOf="@id/userTypeAndLocation"
         tools:text="Total Reputation: 999" />
 
     <TextView

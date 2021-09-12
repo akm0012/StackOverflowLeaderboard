@@ -15,5 +15,7 @@
     <string name="member_type_team_admin">Team Admin</string>
     <string name="member_type_does_not_exist">Does Not Exist</string>
 
+    <string name="member_type_and_location">%s (%s)</string>
+
 
 </resources>
