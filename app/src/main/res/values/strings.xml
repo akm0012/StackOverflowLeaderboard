@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">StackOverflowLeaderboard</string>
+
+    <string name="stack_base_endpoint" translatable="false">https://api.stackexchange.com/2.2/</string>
+
+    <string name="no_network_detected">Sorry, you appear to be offline.</string>
+    <string name="timeout">Sorry, the network request timed out. Please try again later.</string>
 </resources>
