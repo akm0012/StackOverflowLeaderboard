@@ -1,13 +1,15 @@
 package com.andrewkingmarshall.stackoverflowleaderboard.enums
 
+import androidx.annotation.StringRes
 import androidx.room.TypeConverter
+import com.andrewkingmarshall.stackoverflowleaderboard.R
 
-enum class UserType(val serverValue: String) {
-    UNREGISTERED("unregistered"),
-    REGISTERED("registered"),
-    MODERATOR("moderator"),
-    TEAM_ADMIN("team_admin"),
-    DOES_NOT_EXIST("does_not_exist"),
+enum class UserType(val serverValue: String, @StringRes val readableResourceId: Int) {
+    UNREGISTERED("unregistered", R.string.member_type_unregistered),
+    REGISTERED("registered", R.string.member_type_registered),
+    MODERATOR("moderator", R.string.member_type_moderator),
+    TEAM_ADMIN("team_admin", R.string.member_type_team_admin),
+    DOES_NOT_EXIST("does_not_exist", R.string.member_type_does_not_exist),
 }
 
 class UserTypeConverters {

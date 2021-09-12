@@ -5,4 +5,15 @@
 
     <string name="no_network_detected">Sorry, you appear to be offline.</string>
     <string name="timeout">Sorry, the network request timed out. Please try again later.</string>
+    <string name="total_reputation">Total Reputation: %d</string>
+    <string name="member_since">Member Since: %s</string>
+
+
+    <string name="member_type_unregistered">Unregistered</string>
+    <string name="member_type_registered">Registered</string>
+    <string name="member_type_moderator">Moderator</string>
+    <string name="member_type_team_admin">Team Admin</string>
+    <string name="member_type_does_not_exist">Does Not Exist</string>
+
+
 </resources>

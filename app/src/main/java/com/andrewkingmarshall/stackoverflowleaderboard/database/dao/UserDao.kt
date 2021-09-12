@@ -18,4 +18,7 @@ interface UserDao {
 
     @Query("SELECT * FROM User ORDER BY reputation DESC")
     fun getUsers(): Flow<List<User>>
+
+    @Query("SELECT * FROM User WHERE userId = :userId")
+    fun getUser(userId: Long): Flow<User>
 }

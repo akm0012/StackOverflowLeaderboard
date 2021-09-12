@@ -13,6 +13,8 @@
     <color name="silver">#C2C5C8</color>
     <color name="bronze">#D5B69A</color>
 
+    <color name="dark_gray">#4A4A4A</color>
+
     <color name="light_gray_50_percent_opacity">#80979797</color>
 
     <color name="white_50_percent_opacity">#80FFFFFF</color>

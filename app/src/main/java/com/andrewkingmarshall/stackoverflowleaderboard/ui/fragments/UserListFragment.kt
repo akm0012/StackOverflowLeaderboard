@@ -34,6 +34,10 @@ class UserListFragment : BaseFragment<FragmentUserListBinding>(FragmentUserListB
 
         viewModel.showError.observe(viewLifecycleOwner, { it.toast(requireContext()) })
 
+        viewModel.goToUserDetailEvent.observe(viewLifecycleOwner, {
+            navController.navigate(UserListFragmentDirections.actionUserListFragmentToUserDetailFragment(it))
+        })
+
         setUpUserList()
     }
 
@@ -50,7 +54,7 @@ class UserListFragment : BaseFragment<FragmentUserListBinding>(FragmentUserListB
 
         // Set up adapter
         binding.recyclerView.adapter = userListAdapter.apply {
-            setOnUserClickedListener { it.displayName.toast(requireContext()) }
+            setOnUserClickedListener { viewModel.onUserClicked(it) }
         }
 
         // Listen to refresh the user data

@@ -19,7 +19,11 @@ class UserRepository @Inject constructor(
     private val userDao: UserDao,
 ) {
 
-    val userFlow = userDao.getUsers()
+    val usersFlow = userDao.getUsers()
+
+    fun getUserByIdFlow(userId: Long): Flow<User> {
+        return userDao.getUser(userId)
+    }
 
     suspend fun refreshUsers() {
         try {

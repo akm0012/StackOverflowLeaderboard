@@ -3,6 +3,7 @@ package com.andrewkingmarshall.stackoverflowleaderboard.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.andrewkingmarshall.stackoverflowleaderboard.database.entities.User
 import com.andrewkingmarshall.stackoverflowleaderboard.repository.UserRepository
 import com.andrewkingmarshall.stackoverflowleaderboard.util.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -26,7 +27,13 @@ class UserListViewModel @Inject constructor(
 
     val showError = SingleLiveEvent<String>()
 
-    val users = userRepository.userFlow.asLiveData()
+    val goToUserDetailEvent = SingleLiveEvent<Long>()
+
+    val users = userRepository.usersFlow.asLiveData()
+
+    fun onUserClicked(user: User) {
+        goToUserDetailEvent.value = user.userId
+    }
 
     private fun refreshUsers() {
         viewModelScope.launch {

@@ -83,6 +83,8 @@ dependencies {
     // Used in Logging
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
+    // Joda Time
+    implementation 'net.danlew:android.joda:2.10.1'
 
     // Testing
     testImplementation 'junit:junit:4.+'

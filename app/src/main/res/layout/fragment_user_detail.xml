@@ -1,14 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.UserListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="User Detail" />
+    <ImageView
+        android:id="@+id/userProfileImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@id/userNameTextView"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias=".3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_item_top_margin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_large"
+        app:layout_constraintBottom_toTopOf="@id/userType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userProfileImageView"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/userType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dark_gray"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintBottom_toTopOf="@id/totalReputationTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userNameTextView"
+        tools:text="Registered" />
+
+    <TextView
+        android:id="@+id/totalReputationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_item_top_margin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_large"
+        app:layout_constraintBottom_toTopOf="@id/goldMedalCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userType"
+        tools:text="Total Reputation: 999" />
+
+    <TextView
+        android:id="@+id/goldMedalCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_item_top_margin"
+        android:drawablePadding="@dimen/medal_margin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_small"
+        app:drawableStartCompat="@drawable/circle"
+        app:drawableTint="@color/gold"
+        app:layout_constraintBottom_toTopOf="@id/memberSinceTextView"
+        app:layout_constraintEnd_toStartOf="@id/silverMedalCount"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalReputationTextView"
+        tools:text="999" />
+
+    <TextView
+        android:id="@+id/silverMedalCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/medal_margin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_small"
+        app:drawableStartCompat="@drawable/circle"
+        app:drawableTint="@color/silver"
+        app:layout_constraintBottom_toBottomOf="@id/goldMedalCount"
+        app:layout_constraintEnd_toStartOf="@id/bronzeMedalCount"
+        app:layout_constraintStart_toEndOf="@id/goldMedalCount"
+        app:layout_constraintTop_toTopOf="@id/goldMedalCount"
+        tools:text="999" />
+
+    <TextView
+        android:id="@+id/bronzeMedalCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/medal_margin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_small"
+        app:drawableStartCompat="@drawable/circle"
+        app:drawableTint="@color/bronze"
+        app:layout_constraintBottom_toBottomOf="@id/goldMedalCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/silverMedalCount"
+        app:layout_constraintTop_toTopOf="@id/goldMedalCount"
+        tools:text="999" />
+
+    <TextView
+        android:id="@+id/memberSinceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_item_top_margin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/goldMedalCount"
+        tools:text="Member Since: July 17th 1990" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
