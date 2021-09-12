@@ -8,3 +8,7 @@ It showcases some advanced Android topics including:
 - Jetpack Navigation Components
 - MVVM Architecture 
 - Offline First
+
+![User List](/UserList.png)
+
+![User List](/UserDetail.png)
