@@ -1,10 +1,7 @@
 package com.andrewkingmarshall.stackoverflowleaderboard.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -32,11 +29,15 @@ class UserListFragment : BaseFragment<FragmentUserListBinding>(FragmentUserListB
     override fun setup(view: View) {
         navController = Navigation.findNavController(view)
 
-        viewModel.showError.observe(viewLifecycleOwner, { it.toast(requireContext()) })
+        viewModel.showError.observe(viewLifecycleOwner) { it.toast(requireContext()) }
 
-        viewModel.goToUserDetailEvent.observe(viewLifecycleOwner, {
-            navController.navigate(UserListFragmentDirections.actionUserListFragmentToUserDetailFragment(it))
-        })
+        viewModel.goToUserDetailEvent.observe(viewLifecycleOwner) {
+            navController.navigate(
+                UserListFragmentDirections.actionUserListFragmentToUserDetailFragment(
+                    it
+                )
+            )
+        }
 
         setUpUserList()
     }
@@ -58,11 +59,9 @@ class UserListFragment : BaseFragment<FragmentUserListBinding>(FragmentUserListB
         }
 
         // Listen to refresh the user data
-        viewModel.users.observe(viewLifecycleOwner, { userListAdapter.submitList(it) })
+        viewModel.users.observe(viewLifecycleOwner) { userListAdapter.submitList(it) }
 
         // Listen for when we should stop showing the pull to refresh indicator
-        viewModel.showLoadingEvent.observe(
-            viewLifecycleOwner,
-            { binding.swipeRefreshLayout.isRefreshing = it })
+        viewModel.showLoadingEvent.observe(viewLifecycleOwner) { binding.swipeRefreshLayout.isRefreshing = it }
     }
 }
