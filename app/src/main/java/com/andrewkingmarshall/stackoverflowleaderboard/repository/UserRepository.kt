@@ -4,13 +4,8 @@ import com.andrewkingmarshall.stackoverflowleaderboard.database.dao.UserDao
 import com.andrewkingmarshall.stackoverflowleaderboard.database.entities.EnumNotSupportedException
 import com.andrewkingmarshall.stackoverflowleaderboard.database.entities.User
 import com.andrewkingmarshall.stackoverflowleaderboard.network.service.StackExchangeApiService
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.withContext
 import timber.log.Timber
-import java.io.IOException
 import java.lang.Exception
 import javax.inject.Inject
 

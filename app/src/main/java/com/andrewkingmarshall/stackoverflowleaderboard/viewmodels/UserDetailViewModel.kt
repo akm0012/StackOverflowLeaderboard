@@ -5,9 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.andrewkingmarshall.stackoverflowleaderboard.R
-import com.andrewkingmarshall.stackoverflowleaderboard.database.entities.User
 import com.andrewkingmarshall.stackoverflowleaderboard.repository.UserRepository
-import com.andrewkingmarshall.stackoverflowleaderboard.util.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.map

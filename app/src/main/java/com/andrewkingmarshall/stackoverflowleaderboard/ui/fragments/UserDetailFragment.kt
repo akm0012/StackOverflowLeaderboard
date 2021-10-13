@@ -1,17 +1,11 @@
 package com.andrewkingmarshall.stackoverflowleaderboard.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import com.andrewkingmarshall.stackoverflowleaderboard.R
-import com.andrewkingmarshall.stackoverflowleaderboard.database.entities.User
 import com.andrewkingmarshall.stackoverflowleaderboard.databinding.FragmentUserDetailBinding
 import com.andrewkingmarshall.stackoverflowleaderboard.viewmodels.UserDetailViewModel
-import com.andrewkingmarshall.stackoverflowleaderboard.viewmodels.UserListViewModel
 import com.bumptech.glide.Glide
 
 class UserDetailFragment :
